@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &C)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap "<< _name << " destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &C)
@@ -64,14 +64,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 	else if (amount >= _hit_points)
 	{
 		std::cout << "ClapTrap " << _name << " takes " << amount
-				  << "damage,  fatality :(" << std::endl;
+				  << " damages,  fatality :(" << std::endl;
 		_hit_points = 0;
 	}
 	else
 	{
 		_hit_points -= amount;
 		std::cout << "ClapTrap " << _name << " takes " << amount
-				  << " damage and " << _hit_points << " hit point remain"
+				  << " damages and " << _hit_points << " hit points remain"
 				  << std::endl;
 	}
 }

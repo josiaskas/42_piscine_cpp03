@@ -28,5 +28,12 @@ int main()
 	kaido.attack("Sanji"); // can't attack
 	kaido.takeDamage(10); // but can be attacked
 
-	//destructors
+	// copy constructor
+	ClapTrap mega(luffy);
+	mega.attack("zoro");
+
+	// = op
+	kaido.takeDamage(2);
+	kaido = doffy;
+	kaido.takeDamage(2);
 }
