@@ -37,7 +37,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rightSide)
 	return (*this);
 }
 
-
 void ScavTrap::attack(const std::string &target)
 {
 	if (_energy_point > 0)

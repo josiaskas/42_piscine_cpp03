@@ -1,7 +1,7 @@
 //
 // Created by Josias Mutshaila kasongo on 2022-12-08.
 //
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -39,21 +39,40 @@ int main()
 		kaido.takeDamage(2);
 		kaido = doffy;
 		kaido.takeDamage(2);
+
+
+	 //part 2 Scav
+
+	 	ScavTrap ichigo("Ichigo");
+		ClapTrap baggy("Baggy"); //Simple ClapTrap
+
+		ichigo.takeDamage(25); //more than a normal ClapTrap
+
+		ichigo.guardGate(); // check if guardGate work on this type
+
+		ScavTrap ace(ichigo); // new one with 75
+		ace.takeDamage(75);
+		ichigo.takeDamage(30);
+
+		// = operator with a ClapTrap, mother class can take daughter
+		baggy = ichigo;
+		baggy.attack("mihawk");
+
 	*/
 
-	ScavTrap ichigo("Ichigo");
-	ClapTrap baggy("Baggy"); //Simple ClapTrap
+	FragTrap kenpachi("Zaraki");
+	ClapTrap byakuya("Byakuya"); //Simple ClapTrap
 
-	ichigo.attack("Aizen"); //special attack of scav
-	ichigo.takeDamage(25); //more than a normal ClapTrap
+	kenpachi.attack("Unohana"); //special frag
+	kenpachi.takeDamage(25); //more than a normal ClapTrap
 
-	ichigo.guardGate(); // check if guardGate work on this type
+	kenpachi.highFivesGuys(); // check if highfive work on this type
 
-	ScavTrap ace(ichigo); // new one with 75
-	ace.takeDamage(75);
-	ichigo.takeDamage(30);
+	FragTrap goji(kenpachi);
+	goji.takeDamage(75);
+	kenpachi.takeDamage(30);
 
 	// = operator with a ClapTrap, mother class can take daughter
-	baggy = ichigo;
-	baggy.attack("mihawk");
+	byakuya = kenpachi;
+	byakuya.attack("renji");
 }
