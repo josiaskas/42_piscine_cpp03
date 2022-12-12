@@ -6,15 +6,15 @@
 #define EX02_FRAGTRAP_H
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap {
+class FragTrap: virtual public ClapTrap {
 	public:
 		FragTrap();
 		explicit FragTrap(const std::string &name);
 		FragTrap(const FragTrap& f);
-		~FragTrap();
+		virtual ~FragTrap();
 
 		FragTrap& operator=(const FragTrap& rightSide);
-		void attack(std::string const & target);
+		virtual void attack(std::string const & target);
 		void highFivesGuys(void);
 };
 

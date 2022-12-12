@@ -10,14 +10,14 @@
 class ClapTrap {
 	public:
 	ClapTrap();
-	ClapTrap(const std::string &name);
+	explicit ClapTrap(const std::string &name);
 	ClapTrap(const ClapTrap &C);
 
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap &operator=(const ClapTrap &C);
 
-	void attack(const std::string &target);
+	virtual void attack(const std::string &target);
 
 	void takeDamage(unsigned int amount);
 

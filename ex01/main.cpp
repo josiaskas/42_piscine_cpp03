@@ -56,4 +56,9 @@ int main()
 	// = operator with a ClapTrap, mother class can take daughter
 	baggy = ichigo;
 	baggy.attack("mihawk");
+
+	//dynamic linkage with a mother class
+	ClapTrap *poly = new ScavTrap("Poly");
+	poly->attack("bot");
+	delete poly;
 }

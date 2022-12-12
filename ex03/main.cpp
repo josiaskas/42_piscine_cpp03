@@ -1,7 +1,7 @@
 //
 // Created by Josias Mutshaila kasongo on 2022-12-08.
 //
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -58,31 +58,40 @@ int main()
 		baggy = ichigo;
 		baggy.attack("mihawk");
 
-		// dynamic linkage with a mother class
+	 	//dynamic linkage with a mother class
+
 		ClapTrap *poly = new ScavTrap("Poly");
 		poly->attack("bot");
 		delete poly;
 
+	 // part 3 Frag
+
+		FragTrap kenpachi("Zaraki");
+		ClapTrap byakuya("Byakuya"); //Simple ClapTrap
+
+		kenpachi.attack("Unohana"); //special frag
+		kenpachi.takeDamage(25); //more than a normal ClapTrap
+
+		kenpachi.highFivesGuys(); // check if highfive work on this type
+
+		FragTrap goji(kenpachi);
+		goji.takeDamage(75);
+		kenpachi.takeDamage(30);
+
+		// = operator with a ClapTrap, mother class can take daughter
+		byakuya = kenpachi;
+		byakuya.attack("renji");
+
+	 	//dynamic linkage
+			ClapTrap *poly2 = new FragTrap("Poly");
+			poly2->attack("bot");
+			delete poly2;
 	*/
+	DiamondTrap naruto("Uzumaki");
+	naruto.whoAmI();
 
-	FragTrap kenpachi("Zaraki");
-	ClapTrap byakuya("Byakuya"); //Simple ClapTrap
-
-	kenpachi.attack("Unohana"); //special frag
-	kenpachi.takeDamage(25); //more than a normal ClapTrap
-
-	kenpachi.highFivesGuys(); // check if highfive work on this type
-
-	FragTrap goji(kenpachi);
-	goji.takeDamage(75);
-	kenpachi.takeDamage(30);
-
-	// = operator with a ClapTrap, mother class can take daughter
-	byakuya = kenpachi;
-	byakuya.attack("renji");
-
-	//dynamic linkage
-	ClapTrap *poly = new FragTrap("Poly");
-	poly->attack("bot");
-	delete poly;
+	naruto.attack("sasuke");
+	// both members are present
+	naruto.highFivesGuys();
+	naruto.guardGate();
 }
